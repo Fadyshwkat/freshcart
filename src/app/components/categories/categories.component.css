@@ -1,0 +1,6 @@
+.category {
+    border-radius: 5px;
+    border: solid 1px var(--main-color);
+    transition: box-shadow 0.5s;
+    cursor: pointer;
+  }

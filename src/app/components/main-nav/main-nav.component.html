@@ -1,0 +1,66 @@
+<nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <div class="container">
+      <a class="navbar-brand" routerLink="/main/home" >
+        <img src="./assets/images/freshcart-logo.svg" alt="">
+      </a>
+      
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            
+            <li class="nav-item">
+              <a class="nav-link" routerLink="/main/home" routerLinkActive="active-link">Home</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" routerLink="/main/cart" routerLinkActive="active-link">Cart</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" routerLink="/main/products" routerLinkActive="active-link">Products</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" routerLink="/main/categories" routerLinkActive="active-link">Categories</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" routerLink="/main/brands" routerLinkActive="active-link">Brands</a>
+            </li>
+           
+            
+            
+          </ul>
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+          <li class="nav-item" routerLink="/main/cart">
+            <a class="nav-link position-relative" >
+              <i class="fa-solid fa-cart-shopping text-main fs-3"></i>
+              <span class="badge bg-info position-absolute top-0 end-0">{{cartCounter}}</span>
+            
+            </a>
+          </li>
+          <li class="nav-item" >
+            <a  class="nav-link" ><i class="fab fa-facebook"></i></a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" ><i class="fab fa-twitter"></i></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" ><i class="fab fa-linkedin"></i></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" ><i class="fab fa-instagram"></i></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" ><i class="fab fa-youtube"></i></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" ><i class="fab fa-tiktok"></i></a>
+          </li>
+          <li class="nav-item">
+            <button class="nav-link" (click)="signOut()" >SignOut</button>
+          </li>
+         
+          
+          
+        </ul>
+      
+      </div>
+    </div>
+  </nav>

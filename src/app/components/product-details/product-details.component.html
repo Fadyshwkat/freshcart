@@ -1,0 +1,52 @@
+@if (productDetails) {
+    <section class="my-3 p-3">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-12 col-md-3 p-2">
+                    <owl-carousel-o [options]="productImages">
+    
+                        @for (img of productDetails.images; track $index) {
+                            <ng-template carouselSlide >
+                                <img [src]="img" [alt]="productDetails.title" class="w-100">
+                              </ng-template>
+                        }
+                    
+                      </owl-carousel-o>
+                </div>
+                <div class="col-12 col-md-9 p-2">
+                    <h2 class="fs-2 fw-bold my-2">{{productDetails.title}}</h2>
+                    <p class="fw-bold my-2">{{productDetails.description}}</p>
+                    <h2 class="fs-4 text-main my-2">{{productDetails.category.name}}</h2>
+                    <div class="d-flex justify-content-between align-items-center my-2">
+                        <span class="small fw-bold">{{productDetails.price}} EGP</span>
+                        <div class="small">
+                            @for (star of [1,2,3,4,5].slice(0,productDetails.ratingsAverage); track $index) {
+                                <i class="fas fa-star rating-color"></i>}
+                            @if(productDetails.ratingsAverage%1 !=0){<i class="fas fa-star-half-stroke rating-color"></i>}
+                            <span>{{productDetails.ratingsAverage}}</span>
+                        </div>
+                    </div>
+                    <button (click)="addCartProduct(productDetails._id)" class="w-100 btn-main my-2">Add to cart +</button>
+                </div>
+            </div>
+        </div>
+    </section>
+}
+@else if (categoryDetails) {
+    <section class="my-3 p-3">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-12 col-md-3 p-2">
+ 
+                    <img [src]="categoryDetails.image" [alt]="categoryDetails.name" class="w-100">
+                    
+                </div>
+                <div class="col-12 col-md-9 p-2">
+                    <h2 class="fs-2 fw-bold my-2 text-main">{{categoryDetails.name}}</h2>
+                    <p class="fw-bold my-2">{{categoryDetails.slug}}</p>
+                    
+                </div>
+            </div>
+        </div>
+    </section>
+}

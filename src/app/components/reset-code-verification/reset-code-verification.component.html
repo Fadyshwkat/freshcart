@@ -1,0 +1,28 @@
+<section class="bg-main-light p-3 my-2 mx-auto w-75 rounded-2 shadow">
+    <p>Enter the reset code sent to your email.</p>
+    <form [formGroup]="resetCodeForm" (ngSubmit)="verifyResetCode()">
+      <!-- Reset Code Input -->
+      <div class="my-3">
+        <label for="resetCode" class="form-label">Reset Code</label>
+        <input
+          type="tel"
+          id="resetCode"
+          formControlName="resetCode"
+          class="form-control p-2"
+          placeholder="Enter the reset code of 6 numbers ..."
+          [ngClass]="{'is-invalid': resetCodeForm.get('code')?.invalid && resetCodeForm.get('code')?.touched}"
+        />
+        
+      </div>
+  
+      <!-- Submit Button -->
+      <button
+        type="submit"
+        class="w-50 mx-auto d-block my-3 btn-main"
+        [disabled]="resetCodeForm.invalid"
+      >
+        Verify Code
+      </button>
+    </form>
+  </section>
+  
